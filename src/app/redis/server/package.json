@@ -1,0 +1,26 @@
+{
+  "name": "redis-server",
+  "version": "1.0.0",
+  "description": "node server",
+  "main": "redis-server.js",
+  "scripts": {
+    "start": "node redis-server.js",
+    "dev": "nodemon ./redis-server.js localhost 5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "elasticsearch": "^16.7.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

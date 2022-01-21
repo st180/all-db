@@ -1,0 +1,26 @@
+{
+  "name": "cassandra-server",
+  "version": "1.0.0",
+  "description": "node server",
+  "main": "cassandra-server.js",
+  "scripts": {
+    "start": "node cassandra-server.js",
+    "dev": "nodemon ./cassandra-server.js localhost 9200",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "elasticsearch": "^16.7.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
