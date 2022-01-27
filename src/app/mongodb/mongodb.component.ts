@@ -40,7 +40,7 @@ export class MongodbComponent implements OnInit {
             (response) => console.log(response),
             (error) => console.log(error)
           );
-          setTimeout(() => this.readData(), 300);
+          setTimeout(() => this.readData(), 50);
         }
 
         submitForm() {

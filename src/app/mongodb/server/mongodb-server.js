@@ -23,7 +23,7 @@ app.use(cors({
 /**************************** DB CONNECTION ******************************/
 const dbName = 'alldb'
 let db
-let url = 'mongodb://127.0.0.1:27017';
+let url = 'mongodb+srv://chailatte:ChaiLatte!@cluster0.5yda5.mongodb.net/alldb?retryWrites=true&w=majority';
 
 MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   if (err) return console.log(err)
@@ -33,6 +33,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   console.log(`Connected MongoDB: ${url}`)
   console.log(`Database: ${dbName}`)
 })
+
 /************************** ROUTES ********************************/
 
 app.get('/', (req, res) => {
@@ -40,7 +41,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/mongodb-users', (req, res) => {
-  const client = new MongoClient("mongodb://localhost:27017");
+  const client = new MongoClient(url);
   async function run() {
 
     try {
@@ -66,7 +67,7 @@ app.get('/mongodb-users', (req, res) => {
 })
 
 app.post('/mongodb-users', (req, res) => {
-    const client = new MongoClient("mongodb://localhost:27017");
+    const client = new MongoClient(url);
     async function run() {
       try {
         await client.connect();
@@ -92,7 +93,7 @@ app.post('/mongodb-users', (req, res) => {
 /************/
 
 app.get('/mongodb-users/:id/delete', (req, res) => {
-  const client = new MongoClient("mongodb://localhost:27017");
+  const client = new MongoClient(url);
   async function run() {
     try {
       await client.connect();
